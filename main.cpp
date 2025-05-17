@@ -1,11 +1,15 @@
 #include "mainwindow.h"
-
 #include <QApplication>
+#include "logger.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
+
+    Logger::init("cornifer.log");
+
     MainWindow w;
     w.show();
-    return a.exec();
+
+    return app.exec();
 }

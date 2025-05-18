@@ -1,14 +1,14 @@
 Checks: >
-  -*,
-  clang-analyzer-*,
-  performance-*,
-  readability-*,
-  modernize-*,
-  cppcoreguidelines-*
-WarningsAsErrors: ''
+    -*,
+    clang-analyzer-*,
+    modernize-*,
+    bugprone-*,
+    performance-*,
+    readability-*
+WarningsAsErrors: false
 HeaderFilterRegex: '.*'
-FormatStyle: file
 CheckOptions:
-  - key:             modernize-use-nullptr.NullMacros
-    value:           'NULL'
-
+  - key: modernize-use-nodiscard.CheckedTypes
+    value: '.*'
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase

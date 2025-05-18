@@ -11,7 +11,6 @@
 
 #include "filematcher.h"
 
-#include "customerrors.h"
 #include "BS_thread_pool.hpp"
 
 namespace fs = std::filesystem;

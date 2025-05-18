@@ -15,7 +15,7 @@ include(FetchContent)
 FetchContent_Declare(
   bs_thread_pool
   GIT_REPOSITORY https://github.com/bshoshany/thread-pool.git
-  GIT_TAG v5.0.0 # یا آخرین نسخه
+  GIT_TAG v5.0.0 
 )
 FetchContent_MakeAvailable(bs_thread_pool)
 
@@ -128,6 +128,23 @@ set_target_properties(Cornifer PROPERTIES
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
 )
+
+# Enable clang-tidy if available
+find_program(CLANG_TIDY_EXE NAMES "clang-tidy")
+if(CLANG_TIDY_EXE)
+    set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_EXE}" "--config-file=${CMAKE_SOURCE_DIR}/.clang-tidy")
+endif()
+
+# Enable clang-format target
+find_program(CLANG_FORMAT_EXE NAMES "clang-format")
+if(CLANG_FORMAT_EXE)
+    add_custom_target(
+        format
+        COMMAND ${CLANG_FORMAT_EXE} -i --style=file ${ALL_SOURCE_FILES}
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    )
+endif()
+
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(Cornifer)

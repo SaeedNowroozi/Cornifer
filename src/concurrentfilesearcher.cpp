@@ -7,7 +7,7 @@ ConcurrentFileSearcher::ConcurrentFileSearcher(const std::vector<std::string>& p
     : stop_requested_(false)
 {
     matcher_ = std::make_unique<FileMatcher>(patterns, case_insensitive);
-    // Logger::init("cornifer.log"); // مقداردهی اولیه لاگر بهتر است بیرون از اینجا انجام شود
+
 }
 
 ConcurrentFileSearcher::~ConcurrentFileSearcher()

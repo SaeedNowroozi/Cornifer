@@ -24,7 +24,7 @@ public:
     static void error(const std::string& msg);
     static void debug(const std::string& msg);
 
-    static void log(const std::string& msg, Level level); // متد اصلی لاگ
+    static void log(const std::string& msg, Level level);
 
 private:
     static void appendToModel(const QString& msg);

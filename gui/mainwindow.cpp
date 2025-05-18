@@ -35,13 +35,13 @@ void MainWindow::on_searchButton_clicked()
 
         if (pattern.isEmpty()) {
             QMessageBox::warning(this, "Warning", "Please enter a search pattern.");
-            Logger::log("کاربر الگوی جستجو را وارد نکرده است.", Logger::Level::Warn);
+            Logger::log("The user did not enter a search pattern.", Logger::Level::Warn);
             return;
         }
 
         if (rootDir.isEmpty()) {
             QMessageBox::warning(this, "Warning", "Please enter a directory path.");
-            Logger::log("کاربر مسیر جستجو را وارد نکرده است.", Logger::Level::Warn);
+            Logger::log("The user did not enter a search path.", Logger::Level::Warn);
             return;
         }
 
@@ -50,7 +50,7 @@ void MainWindow::on_searchButton_clicked()
         ConcurrentFileSearcher searcher({pattern.toStdString()}, caseInsensitive);
 
         resultsModel->setStringList({});
-        Logger::log("شروع جستجو...", Logger::Level::Info);
+        Logger::log("Start searching...", Logger::Level::Info);
 
         try {
             auto results = searcher.search(rootDir.toStdString());
@@ -62,12 +62,12 @@ void MainWindow::on_searchButton_clicked()
 
             resultsModel->setStringList(resultList);
 
-            Logger::log(QString("جستجو به پایان رسید. تعداد فایل‌های پیدا شده: %1")
+            Logger::log(QString("Search completed. Number of files found: %1")
                             .arg(resultList.size())
                             .toStdString(),
                         Logger::Level::Info);
         } catch (const std::exception& ex) {
-            Logger::log(std::string("خطا: ") + ex.what(), Logger::Level::Error);
+            Logger::log(std::string("Error: ") + ex.what(), Logger::Level::Error);
             QMessageBox::critical(this, "Error", ex.what());
         }
 }

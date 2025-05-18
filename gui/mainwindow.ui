@@ -6,73 +6,507 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>748</width>
-    <height>634</height>
+    <width>583</width>
+    <height>444</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">/* برای پنجره اصلی */
+QMainWindow {
+    background-color: rgb(46, 52, 54);
+}
+
+QTabWidget::pane {
+    border: 1px solid rgb(245, 121, 0);
+    border-radius: 8px;
+    margin-top: -1px; /* برای همپوشانی با تب‌ها */
+}
+
+QTabWidget::tab-bar {
+    left: 5px;
+}
+
+QTabBar {
+    background: transparent;
+    color: black;
+    font-family: Courier;
+    font-size: 12pt;
+}
+
+QTabBar::tab {
+    background: rgb(17, 19, 20);
+    color: rgb(245, 121, 0);
+    border: 1.25px solid rgb(245, 121, 0);
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-height: 30px;
+    padding: 2px 20px;
+}
+
+QTabBar::tab:selected {
+    background: rgb(46, 65, 54);
+    color: white;
+    border-color: rgb(245, 121, 0);
+}
+
+QTabBar::tab:hover:!selected {
+    background: rgb(46, 50, 84);
+    color: rgb(255, 0, 12);
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
-       <widget class="QLineEdit" name="directoryLineEdit"/>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+    color: rgb(240, 240, 240);  /* Light text color */
+    background-color: transparent; /* Transparent by default */
+    font-family: &quot;Segoe UI&quot;;      /* Match your system font */
+    font-size: 12pt;
+    padding: 2px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Address</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="directoryLineEdit">
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
+    border: 2px solid rgb(255, 165, 0);  /* Orange color using RGB */
+    border-radius: 5px;
+    padding: 5px;
+    background: white;
+    selection-background-color: darkorange;
+}
+
+/* When the QLineEdit is in focus (clicked/active) */
+QLineEdit:focus {
+    border: 2px solid darkorange;
+}
+
+/* When the QLineEdit is disabled */
+QLineEdit:disabled {
+    border: 1px solid gray;
+    background: lightgray;
+}
+QLineEdit {
+    background-color: rgb(60, 60, 60);  /* Dark gray background */
+    color: rgb(240, 240, 240);         /* Light text color */
+    border: 1px solid rgb(245, 121, 0); /* Your orange accent color */
+    border-radius: 4px;
+    padding: 5px;
+    selection-background-color: rgb(245, 121, 0); /* Orange selection */
+    selection-color: black;
+}
+
+QLineEdit:focus {
+    border: 2px solid rgb(245, 165, 0); /* Brighter orange when focused */
+}
+
+QLineEdit:disabled {
+    background-color: rgb(40, 40, 40);
+    color: rgb(150, 150, 150);
+    border: 1px solid rgb(80, 80, 80);
+}</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="styleSheet">
+             <string notr="true">QLabel {
+    color: rgb(240, 240, 240);  /* Light text color */
+    background-color: transparent; /* Transparent by default */
+    font-family: &quot;Segoe UI&quot;;      /* Match your system font */
+    font-size: 12pt;
+    padding: 2px;
+}</string>
+            </property>
+            <property name="text">
+             <string>File</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="patternLineEdit">
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
+    border: 2px solid rgb(255, 165, 0);  /* Orange color using RGB */
+    border-radius: 5px;
+    padding: 5px;
+    background: white;
+    selection-background-color: darkorange;
+}
+
+/* When the QLineEdit is in focus (clicked/active) */
+QLineEdit:focus {
+    border: 2px solid darkorange;
+}
+
+/* When the QLineEdit is disabled */
+QLineEdit:disabled {
+    border: 1px solid gray;
+    background: lightgray;
+}
+QLineEdit {
+    background-color: rgb(60, 60, 60);  /* Dark gray background */
+    color: rgb(240, 240, 240);         /* Light text color */
+    border: 1px solid rgb(245, 121, 0); /* Your orange accent color */
+    border-radius: 4px;
+    padding: 5px;
+    selection-background-color: rgb(245, 121, 0); /* Orange selection */
+    selection-color: black;
+}
+
+QLineEdit:focus {
+    border: 2px solid rgb(245, 165, 0); /* Brighter orange when focused */
+}
+
+QLineEdit:disabled {
+    background-color: rgb(40, 40, 40);
+    color: rgb(150, 150, 150);
+    border: 1px solid rgb(80, 80, 80);
+}</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </item>
       <item>
-       <widget class="QLineEdit" name="patternLineEdit"/>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="caseInsensitiveRadio">
-        <property name="text">
-         <string>Sensetive</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="searchButton">
-        <property name="text">
-         <string>Start</string>
-        </property>
-       </widget>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QPushButton" name="searchButton">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: rgb(60, 60, 60);
+    color: rgb(240, 240, 240);
+    border: 1px solid rgb(245, 121, 0);
+    border-radius: 4px;
+    padding: 5px 10px;
+    min-width: 80px;
+    qproperty-iconSize: 16px;  /* For buttons with icons */
+}
+
+QPushButton:hover {
+    background-color: rgb(70, 70, 70);
+    border-color: rgb(255, 141, 0);
+}
+
+QPushButton:pressed {
+    background-color: rgb(245, 121, 0);
+    color: black;
+}
+
+QPushButton:checked {
+    background-color: rgb(245, 121, 0);
+    color: black;
+    font-weight: bold;
+}</string>
+          </property>
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="caseInsensitiveRadio">
+          <property name="styleSheet">
+           <string notr="true">QRadioButton {
+    color: rgb(240, 240, 240);
+    spacing: 8px;
+    padding: 2px;
+    font-size: 12pt;
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgb(245, 121, 0);
+    border-radius: 9px;
+    background: rgb(30, 30, 30);
+}
+
+QRadioButton::indicator:checked {
+    background: qradialgradient(
+        cx:0.5, cy:0.5,
+        fx:0.25, fy:0.25,
+        radius:0.5,
+        stop:0 rgb(245, 121, 0),
+        stop:1 rgb(200, 80, 0)
+    );
+    border: 2px solid rgb(255, 165, 0);
+}
+
+QRadioButton::indicator:hover {
+    background: qradialgradient(
+        cx:0.5, cy:0.5,
+        fx:0.25, fy:0.25,
+        radius:0.5,
+        stop:0 rgb(60, 60, 60),
+        stop:1 rgb(40, 40, 40)
+    );
+}</string>
+          </property>
+          <property name="text">
+           <string>No Sensitive</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
-    <item>
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>19</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QListView" name="resultListView"/>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    color: rgb(240, 240, 240);  /* Light text color */
+    background-color: transparent; /* Transparent by default */
+    font-family: &quot;Segoe UI&quot;;      /* Match your system font */
+    font-size: 12pt;
+    padding: 2px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListView" name="resultListView">
+          <property name="styleSheet">
+           <string notr="true">QListView {
+    background-color: rgb(46, 52, 54);
+    color: rgb(240, 240, 240);
+    border: 1px solid rgb(245, 121, 0);
+    border-radius: 4px;
+    outline: 0;
+    font-size: 10pt;
+    padding: 2px;
+}
+
+/* Item styling */
+QListView::item {
+    background-color: transparent;
+    height: 22px;
+    padding: 3px;
+}
+
+QListView::item:selected {
+    background-color: rgb(245, 121, 0);
+    color: black;
+    border-radius: 2px;
+}
+
+QListView::item:hover {
+    background-color: rgb(60, 60, 60);
+}
+
+/* Scrollbar styling - UPDATED WITH ORANGE COLORS */
+QListView QScrollBar:vertical {
+    background: rgb(30, 30, 30);
+    width: 14px;
+    margin: 2px;
+}
+
+QListView QScrollBar::handle:vertical {
+    background: rgb(245, 121, 0);
+    min-height: 30px;
+    border-radius: 6px;
+}
+
+QListView QScrollBar::add-line:vertical,
+QListView QScrollBar::sub-line:vertical {
+    background: rgb(30, 30, 30);
+    height: 0px;
+}
+
+QListView QScrollBar::add-page:vertical,
+QListView QScrollBar::sub-page:vertical {
+    background: rgb(40, 40, 40);
+}
+
+/* Horizontal scrollbar (if needed) */
+QListView QScrollBar:horizontal {
+    background: rgb(30, 30, 30);
+    height: 14px;
+    margin: 2px;
+}
+
+QListView QScrollBar::handle:horizontal {
+    background: rgb(245, 121, 0);
+    min-width: 30px;
+    border-radius: 6px;
+}
+QListView {
+    background: rgb(46,52,54);
+    color: white;
+    border: 1px solid rgb(245,121,0);
+    font-size: 10pt;
+}
+
+/* Vertical Scrollbar */
+QScrollBar:vertical {
+    background: rgb(30,30,30);
+    width: 15px;
+    margin: 0;
+}
+QScrollBar::handle:vertical {
+    background: rgb(245,121,0);
+    min-height: 30px;
+    border-radius: 7px;
+}
+QScrollBar::add-line:vertical, 
+QScrollBar::sub-line:vertical {
+    height: 0px;
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
-       <widget class="QListView" name="logListView"/>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    color: rgb(240, 240, 240);  /* Light text color */
+    background-color: transparent; /* Transparent by default */
+    font-family: &quot;Segoe UI&quot;;      /* Match your system font */
+    font-size: 12pt;
+    padding: 2px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Logs</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListView" name="logListView">
+          <property name="styleSheet">
+           <string notr="true">QListView {
+    background-color: rgb(46, 52, 54);
+    color: rgb(240, 240, 240);
+    border: 1px solid rgb(245, 121, 0);
+    border-radius: 4px;
+    outline: 0;
+    font-size: 10pt;
+    padding: 2px;
+}
+
+/* Item styling */
+QListView::item {
+    background-color: transparent;
+    height: 22px;
+    padding: 3px;
+}
+
+QListView::item:selected {
+    background-color: rgb(245, 121, 0);
+    color: black;
+    border-radius: 2px;
+}
+
+QListView::item:hover {
+    background-color: rgb(60, 60, 60);
+}
+
+/* Scrollbar styling - UPDATED WITH ORANGE COLORS */
+QListView QScrollBar:vertical {
+    background: rgb(30, 30, 30);
+    width: 14px;
+    margin: 2px;
+}
+
+QListView QScrollBar::handle:vertical {
+    background: rgb(245, 121, 0);
+    min-height: 30px;
+    border-radius: 6px;
+}
+
+QListView QScrollBar::add-line:vertical,
+QListView QScrollBar::sub-line:vertical {
+    background: rgb(30, 30, 30);
+    height: 0px;
+}
+
+QListView QScrollBar::add-page:vertical,
+QListView QScrollBar::sub-page:vertical {
+    background: rgb(40, 40, 40);
+}
+
+/* Horizontal scrollbar (if needed) */
+QListView QScrollBar:horizontal {
+    background: rgb(30, 30, 30);
+    height: 14px;
+    margin: 2px;
+}
+
+QListView QScrollBar::handle:horizontal {
+    background: rgb(245, 121, 0);
+    min-width: 30px;
+    border-radius: 6px;
+}
+QListView {
+    background: rgb(46,52,54);
+    color: white;
+    border: 1px solid rgb(245,121,0);
+    font-size: 10pt;
+}
+
+/* Vertical Scrollbar */
+QScrollBar:vertical {
+    background: rgb(30,30,30);
+    width: 15px;
+    margin: 0;
+}
+QScrollBar::handle:vertical {
+    background: rgb(245,121,0);
+    min-height: 30px;
+    border-radius: 7px;
+}
+QScrollBar::add-line:vertical, 
+QScrollBar::sub-line:vertical {
+    height: 0px;
+}</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>748</width>
-     <height>18</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

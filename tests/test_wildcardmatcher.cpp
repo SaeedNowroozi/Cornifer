@@ -11,7 +11,7 @@ class LoggerTest : public ::testing::Test {
 protected:
     void SetUp() override {
         model = new QStringListModel();
-        Logger::init(""); // بدون فایل لاگ
+        Logger::init("");
         Logger::setModel(model);
     }
 
@@ -158,43 +158,5 @@ TEST_F(LoggerTest, LogFunctionDispatchesCorrectly) {
     EXPECT_EQ(list[3], "[DEBUG] Debug level");
 }
 
-//namespace fs = std::filesystem;
 
-//class ConcurrentFileSearcherTest : public ::testing::Test {
-//protected:
-//    fs::path temp_dir;
-
-//    void SetUp() override {
-//        temp_dir = fs::temp_directory_path() /*/ "test_dir"*/;
-//        fs::create_directory(temp_dir);
-//        std::ofstream(temp_dir / "main.cpp").put('a');
-//        std::ofstream(temp_dir / "main.h").put('b');
-//        std::ofstream(temp_dir / "README.md").put('c');
-//    }
-
-//    void TearDown() override {
-//        fs::remove_all(temp_dir);
-//    }
-//};
-
-//TEST_F(ConcurrentFileSearcherTest, FindCppFiles) {
-//    ConcurrentFileSearcher searcher({ "*.cpp" });
-//    auto results = searcher.search(temp_dir);
-//    ASSERT_EQ(results.size(), 1);
-//    EXPECT_EQ(results[0].filename(), "main.cpp");
-//}
-
-//TEST_F(ConcurrentFileSearcherTest, CaseInsensitiveSearch) {
-//    ConcurrentFileSearcher searcher({ "readme.md" }, true);
-//    auto results = searcher.search(temp_dir);
-//    ASSERT_EQ(results.size(), 1);
-//    EXPECT_EQ(results[0].filename(), "README.md");
-//}
-//TEST(ConcurrentFileSearcherTest, SimpleSearch) {
-//    ConcurrentFileSearcher searcher({ "*.txt" });
-//    auto results = searcher.search("/path/to/test/directory");
-//    EXPECT_EQ(results.size(), 2);
-//    EXPECT_TRUE(std::find(results.begin(), results.end(), "/path/to/test/directory/file1.txt") != results.end());
-//    EXPECT_TRUE(std::find(results.begin(), results.end(), "/path/to/test/directory/file2.txt") != results.end());
-//}
 

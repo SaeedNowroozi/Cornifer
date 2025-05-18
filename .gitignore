@@ -5,6 +5,10 @@ CMakeLists.txt.user
 *.user
 .user*
 
+# Clang temporary files
+*.clang-tidy
+*.clang-format~
+
 *~
 *.autosave
 *.a

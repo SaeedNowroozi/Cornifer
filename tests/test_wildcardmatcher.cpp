@@ -22,8 +22,6 @@ protected:
     QStringListModel* model;
 };
 
-
-
 TEST(WildcardMatcherTest, SimpleMatch) {
     WildcardMatcher matcher;
     matcher.addPattern("main.cpp");
@@ -199,11 +197,4 @@ TEST_F(LoggerTest, LogFunctionDispatchesCorrectly) {
 //    EXPECT_TRUE(std::find(results.begin(), results.end(), "/path/to/test/directory/file1.txt") != results.end());
 //    EXPECT_TRUE(std::find(results.begin(), results.end(), "/path/to/test/directory/file2.txt") != results.end());
 //}
-//TEST(ConcurrentFileSearcherTest, HandleFilesystemError) {
-//    ConcurrentFileSearcher searcher({ "*.txt" });
-//    // مسیر غیرمجاز یا بدون دسترسی
-//    auto results = searcher.search("/home/saeed/Qt/Examples");
-//    EXPECT_EQ(results.size(), 1);
-//    // بررسی می‌کنیم که لاگ خطا ثبت شده است
-//    // بسته به پیاده‌سازی Logger، ممکن است نیاز به بررسی فایل لاگ یا مدل لاگ باشد
-//}
+

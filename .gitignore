@@ -1,5 +1,9 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
+# Qt Creator
+CMakeLists.txt.user
+*.user
+.user*
 
 *~
 *.autosave

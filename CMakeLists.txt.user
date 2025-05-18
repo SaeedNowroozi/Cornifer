@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 6.0.1, 2025-05-17T17:23:59. -->
+<!-- Written by QtCreator 6.0.1, 2025-05-18T09:28:44. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -286,7 +286,23 @@
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/saeed/build-Cornifer-Desktop_Qt_6_2_2_GCC_64bit-Debug</value>
    </valuemap>
-   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.1">
+    <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+    <valuelist type="QVariantList" key="CustomOutputParsers"/>
+    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">UnitTests</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.UnitTests</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">UnitTests</value>
+    <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/saeed/build-Cornifer-Desktop_Qt_6_2_2_GCC_64bit-Debug</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">2</value>
   </valuemap>
  </data>
  <data>

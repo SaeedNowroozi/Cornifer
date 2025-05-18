@@ -15,7 +15,7 @@ void Logger::init(const std::string& logFile)
         logger_ = std::make_shared<spdlog::logger>("console_logger", console_sink);
     }
     spdlog::set_default_logger(logger_);
-    spdlog::set_level(spdlog::level::debug); // تنظیم سطح لاگ
+    spdlog::set_level(spdlog::level::debug);
     spdlog::flush_on(spdlog::level::info);
 }
 
@@ -56,7 +56,6 @@ void Logger::debug(const std::string& msg)
     appendToModel("[DEBUG] " + QString::fromStdString(msg));
 }
 
-// تابع اصلی log با سطح مشخص
 void Logger::log(const std::string& msg, Level level)
 {
     switch (level) {
